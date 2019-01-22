@@ -1,0 +1,23 @@
+galaxy_info:
+  role_name: open-vm-tools
+  author: Peter Hudec
+  description: VmWare managment tools
+  license: BDS
+  min_ansible_version: 2.3
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  - name: Ubuntu
+    versions:
+    - xenial
+    - bionic
+  - name: Debian
+    versions:
+    - stretch
+    - jessie
+  galaxy_tags:
+    - vmware
+    - system
+
+dependencies: []

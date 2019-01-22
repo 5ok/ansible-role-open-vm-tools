@@ -1,0 +1,6 @@
+---
+
+- name: "restart vmware tools"
+  service:
+    name: "{{ open_vm_tools_service }}"
+    state: restarted

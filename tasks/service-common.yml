@@ -1,0 +1,6 @@
+---
+- name: "enable service"
+  service:
+    name: "{{ open_vm_tools_service }}"
+    enabled: "{{ open_vm_tools_service_enabled }}"
+    state: "{{ open_vm_tools_service_state }}"

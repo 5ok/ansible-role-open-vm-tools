@@ -1,0 +1,6 @@
+---
+
+__open_vm_tools_packages:
+  - {'name': 'open-vm-tools-dkms', 'state': 'present'}
+  - {'name': 'open-vm-tools', 'state': 'present'}
+__open_vm_tools_service: vmtoolsd

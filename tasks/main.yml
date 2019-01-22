@@ -1,0 +1,31 @@
+---
+# tasks file for hudecof.open-vm-tools
+
+- name: include packages tasks
+  include: check-common.yml
+  tags:
+    - open-vm-tools
+    - open-vm-tools:check
+
+
+- name: "set os specific variables"
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "os-{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml"
+    - "os-{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
+    - "os-{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "os-{{ ansible_distribution }}.yml"
+  tags:
+    - always
+
+- name: include packages tasks
+  include: packages-{{ ansible_os_family }}.yml
+  tags:
+    - open-vm-tools
+    - open-vm-tools:packages
+
+- name: include service tasks
+  include: service-common.yml
+  tags:
+    - open-vm-tools
+    - open-vm-tools:service

@@ -1,0 +1,7 @@
+---
+
+open_vm_tools_packages: "{{ __open_vm_tools_packages }}"
+open_vm_tools_service: "{{ __open_vm_tools_service }}"
+open_vm_tools_service_enabled: "yes"
+open_vm_tools_service_state: "started"
+
