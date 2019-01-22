@@ -1,7 +1,6 @@
-# ovirt-guest agent
+# open-vm-tools
 
-
-Installationand confuguration of the ovirt guest agent.
+Installationand confuguration of the open vmware tools
 
 ## Requirements
 
@@ -9,11 +8,7 @@ For Redat based OS **epel** is required, but I do not put in in depencency.
 
 ## Role Variables
 
-## ovirt_guest_agent_device
-
-**ovirt_guest_agent_device** file in the **/dev//virtio-ports/**. Defualt value is `ovirt-guest-agent.0`.
-For older relases of the **oVrt** should be changed into `com.redhat.rhevm.vdsm`.
-
+NONE
 
 ##  Dependencies
 
@@ -24,8 +19,8 @@ NONE
 
     - hosts: servers
       roles:
-      - role: hudecof.ovirt_guest_agent
-        when: "ansible_virtualization_type == 'kvm'and ansible_virtualization_role == 'guest'"
+      - role: securcom.open_vm_tools
+        when: "ansible_virtualization_type == 'VMware' and ansible_virtualization_role == 'guest'"
 
 ## License
 
@@ -33,4 +28,4 @@ BSD
 
 ## Author Information
 
-Peter Hudec
+Peter Hudec (@hudecof)
