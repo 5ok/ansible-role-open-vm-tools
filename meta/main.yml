@@ -16,6 +16,7 @@ galaxy_info:
     versions:
     - stretch
     - jessie
+    - buster
   galaxy_tags:
     - vmware
     - system
