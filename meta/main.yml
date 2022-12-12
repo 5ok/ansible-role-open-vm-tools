@@ -1,27 +1,29 @@
 galaxy_info:
   role_name: open_vm_tools
-  company: 5ok, s.r.o.
+  namespace: 5ok
   author: Peter Hudec
-  description: VmWare managment tools
-  license: BDS
+  company: 5ok s.r.o.
+  license: BSD
+  description: Install and configure Open VM Tools
   min_ansible_version: 2.3
   platforms:
-  - name: EL
-    versions:
-    - 7
-    - 8
-    - 9
-  - name: Ubuntu
-    versions:
-    - xenial
-    - bionic
-  - name: Debian
-    versions:
-    - stretch
-    - jessie
-    - buster
+    - name: EL
+      versions:
+        - 7
+        - 8
+        - 9
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+        - focal
+        - jammy
+    - name: Debian
+      versions:
+        - stretch
+        - jessie
+        - buster
   galaxy_tags:
     - vmware
     - system
-
 dependencies: []

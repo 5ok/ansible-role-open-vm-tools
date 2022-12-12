@@ -1,6 +1,6 @@
 ---
-- name: check virtualization type
-  assert:
+- name: Check virtualization type
+  ansible.builtin.assert:
     msg: "virtualization is not kvm guest"
     that:
       - "ansible_virtualization_role == 'guest'"

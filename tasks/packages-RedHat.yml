@@ -1,6 +1,6 @@
 ---
-- name: "check packages (redhat)"
-  yum:
+- name: "Check packages (redhat)"
+  ansible.builtin.yum:
     pkg: "{{ package.name }}"
     state: "{{ package.state }}"
   with_items: "{{ open_vm_tools_packages }}"

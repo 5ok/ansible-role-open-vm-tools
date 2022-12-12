@@ -1,6 +1,6 @@
 ---
-- name: "check packages (debian)"
-  apt:
+- name: "Check packages (debian)"
+  ansible.builtin.apt:
     pkg: "{{ package.name }}"
     state: "{{ package.state }}"
   with_items: "{{ open_vm_tools_packages }}"

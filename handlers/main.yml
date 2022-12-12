@@ -1,6 +1,6 @@
 ---
 
-- name: "restart vmware tools"
-  service:
+- name: "restart vmware tools"  # noqa name[casing]
+  ansible.builtin.service:
     name: "{{ open_vm_tools_service }}"
     state: restarted
