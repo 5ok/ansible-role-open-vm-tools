@@ -19,7 +19,7 @@ NONE
 
     - hosts: servers
       roles:
-      - role: securcom.open_vm_tools
+      - role: 5ok.open_vm_tools
         when: "ansible_virtualization_type == 'VMware' and ansible_virtualization_role == 'guest'"
 
 ## License
