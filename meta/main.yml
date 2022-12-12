@@ -1,5 +1,6 @@
 galaxy_info:
-  role_name: open-vm-tools
+  role_name: open_vm_tools
+  company: 5ok, s.r.o.
   author: Peter Hudec
   description: VmWare managment tools
   license: BDS
@@ -9,6 +10,7 @@ galaxy_info:
     versions:
     - 7
     - 8
+    - 9
   - name: Ubuntu
     versions:
     - xenial
