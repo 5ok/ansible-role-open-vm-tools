@@ -1,6 +1,0 @@
----
-- hosts: localhost
-  remote_user: root
-  roles:
-    - role: hudecof.open_vm_tools
-      when: "ansible_virtualization_type == 'VMware'"
