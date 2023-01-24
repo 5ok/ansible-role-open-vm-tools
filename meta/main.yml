@@ -5,7 +5,7 @@ galaxy_info:
   company: 5ok s.r.o.
   license: BSD
   description: Install and configure Open VM Tools
-  min_ansible_version: 2.3
+  min_ansible_version: 2.3  # noqa schema[meta]
   platforms:
     - name: EL
       versions:

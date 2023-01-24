@@ -1,12 +1,6 @@
 ---
 # tasks file for hudecof.open-vm-tools
 
-- name: Include packages tasks
-  ansible.builtin.include_tasks: check-common.yml
-  tags:
-    - open-vm-tools
-    - open-vm-tools:check
-
 - name: Set os specific variables
   ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
@@ -14,17 +8,39 @@
     - "os-{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
     - "os-{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
     - "os-{{ ansible_distribution }}.yml"
+    - "os-default.yml"
   tags:
     - always
 
 - name: Include packages tasks
-  ansible.builtin.include_tasks: packages-{{ ansible_os_family }}.yml
+  ansible.builtin.include_tasks:
+    file: check-common.yml
+    apply:
+      tags:
+        - open-vm-tools
+        - open-vm-tools:check
+  when: open_vm_tools_supported
   tags:
-    - open-vm-tools
-    - open-vm-tools:packages
+    - always
+
+- name: Include packages tasks
+  ansible.builtin.include_tasks:
+    file: packages-{{ ansible_os_family }}.yml
+    apply:
+      tags:
+        - open-vm-tools
+        - open-vm-tools:packages
+  when: open_vm_tools_supported
+  tags:
+    - always
 
 - name: Include service tasks
-  ansible.builtin.include_tasks: service-common.yml
+  ansible.builtin.include_tasks:
+    file: service-common.yml
+    apply:
+      tags:
+        - open-vm-tools
+        - open-vm-tools:service
+  when: open_vm_tools_supported
   tags:
-    - open-vm-tools
-    - open-vm-tools:service
+    - always
